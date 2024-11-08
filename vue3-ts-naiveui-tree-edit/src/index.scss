@@ -1,0 +1,113 @@
+/* 容器样式 */
+.tree-container {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; /* 柔和的背景色 */
+  padding: 16px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* 树形节点的包裹容器 */
+.node-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  margin: 4px 0;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  /* 悬停时的背景色和阴影效果 */
+  &:hover {
+    background-color: #f0f8f4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* 切换按钮样式 */
+.toggle-btn {
+  font-size: 18px;
+  color: #9b9b9b;
+  cursor: pointer;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #4caf50; /* 悬停时改变颜色为绿色 */
+  }
+}
+
+/* 展开/折叠的图标 */
+.toggle-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+
+  &.open {
+    transform: rotate(180deg); /* 旋转90度 */
+    color: #4caf50; /* 展开时图标颜色为绿色 */
+  }
+
+  &.closed {
+    transform: rotate(0deg); /* 默认未旋转 */
+    color: #9b9b9b; /* 折叠时图标颜色为灰色 */
+  }
+}
+
+/* 树节点文本样式 */
+.node-text {
+  font-size: 16px;
+  color: #333;
+  transition: color 0.3s ease;
+
+  .node-wrapper:hover & {
+    color: #555; /* 悬停时文字颜色变深 */
+  }
+}
+
+/* 操作按钮容器 */
+.actions {
+  margin-left: auto; /* 将操作按钮容器右对齐 */
+  display: flex;
+  gap: 10px;
+}
+
+/* 操作按钮样式 */
+.action-btn {
+  font-size: 14px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  &.add {
+    background-color: #4caf50;
+    color: #fff;
+
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+
+  &.delete {
+    background-color: #f44336;
+    color: #fff;
+
+    &:hover {
+      background-color: #e53935;
+    }
+  }
+}
+
+/* 针对 Draggable 树组件添加一个通用的树样式 */
+.tree {
+  padding: 0;
+  margin: 0;
+}
