@@ -26,9 +26,9 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
-import { ElTree, ElMessageBox } from 'element-plus';  // 引入 ElMessageBox 用于删除确认
-import { nanoid } from 'nanoid';
-import jsonData from './data.json';
+import { ElTree, ElMessageBox } from 'element-plus';  // 引入 Element UI 的 Tree 组件和消息框组件
+import { nanoid } from 'nanoid';  // 引入 nanoid 用于生成唯一 ID
+import jsonData from './data.json';  // 引入树形数据
 
 // 定义树节点的数据结构
 interface TreeNode {
@@ -42,8 +42,8 @@ const data = ref<TreeNode[]>(jsonData);
 
 // 默认属性配置
 const defaultProps = ref({
-  children: 'children',
-  label: 'label'
+  children: 'children',  // 子节点属性名
+  label: 'label'         // 标签属性名
 });
 
 // 默认展开和选中的节点
@@ -57,7 +57,7 @@ const tree = ref<InstanceType<typeof ElTree> | null>(null);
 const getAllNodeIds = (nodes: TreeNode[]): string[] => {
   return nodes.reduce((ids, node) => {
     ids.push(node.id);
-    if (node.children) ids.push(...getAllNodeIds(node.children));
+    if (node.children) ids.push(...getAllNodeIds(node.children));  // 递归查找所有子节点
     return ids;
   }, [] as string[]);
 };
@@ -66,11 +66,11 @@ const getAllNodeIds = (nodes: TreeNode[]): string[] => {
 const handleAddChild = (nodeData: TreeNode) => {
   const newNode: TreeNode = { id: nanoid(), label: '新子节点' };
 
-  // 直接更新响应式数据，Vue 会自动更新视图
+  // 将新节点添加到当前节点的 children 中
   if (nodeData.children) {
     nodeData.children.push(newNode);
   } else {
-    nodeData.children = [newNode];
+    nodeData.children = [newNode];  // 如果没有 children 属性，初始化为包含新节点的数组
   }
 
   // 设置默认展开的节点
@@ -81,16 +81,18 @@ const handleAddChild = (nodeData: TreeNode) => {
 const handleAddSibling = (nodeData: TreeNode) => {
   const newNode: TreeNode = { id: nanoid(), label: '新同级节点' };
 
+  // 查找父节点
   const parentNode = findParentNode(data.value, nodeData.id);
 
   if (parentNode) {
+    // 找到同级节点的位置
     const siblingNodeIndex = parentNode.children?.findIndex(child => child.id === nodeData.id);
     if (siblingNodeIndex !== undefined && siblingNodeIndex !== -1) {
-      // 插入新节点
-      parentNode.children.splice(siblingNodeIndex + 1, 0, newNode);
+      if (!parentNode.children) parentNode.children = [];  // 确保 children 存在
+      parentNode.children.splice(siblingNodeIndex + 1, 0, newNode);  // 在当前节点后插入新节点
     }
   } else {
-    // 如果没有父节点，则新节点为根节点
+    // 如果没有父节点，直接将新节点添加为根节点
     data.value.push(newNode);
   }
 
@@ -101,8 +103,8 @@ const handleAddSibling = (nodeData: TreeNode) => {
 // 递归查找父节点
 const findParentNode = (nodes: TreeNode[], nodeId: string): TreeNode | null => {
   for (const node of nodes) {
-    if (node.children?.some(child => child.id === nodeId)) return node;
-    const found = node.children && findParentNode(node.children, nodeId);
+    if (node.children?.some(child => child.id === nodeId)) return node;  // 找到父节点
+    const found = node.children && findParentNode(node.children, nodeId);  // 递归查找子节点
     if (found) return found;
   }
   return null;
@@ -111,37 +113,37 @@ const findParentNode = (nodes: TreeNode[], nodeId: string): TreeNode | null => {
 // 删除节点
 const handleDeleteNode = async (nodeData: TreeNode) => {
   try {
-    // 提示用户是否确认删除
+    // 提示用户确认删除
     await ElMessageBox.confirm('确定要删除该节点吗?', '删除确认', {
       confirmButtonText: '确定',
       cancelButtonText: '取消',
       type: 'warning'
     });
 
-    // 删除节点时，直接操作数据
+    // 删除节点
     const parentNode = findParentNode(data.value, nodeData.id);
     if (parentNode) {
       parentNode.children = parentNode.children?.filter(node => node.id !== nodeData.id) || [];
     } else {
-      // 根节点删除
+      // 删除根节点
       data.value = data.value.filter(node => node.id !== nodeData.id);
     }
   } catch (error) {
-    // 用户取消删除
+    // 用户取消删除操作
     console.log('删除操作被取消');
   }
 };
 
 // 设置默认展开的节点
 onMounted(() => {
-  const allNodeIds = getAllNodeIds(data.value);
-  defaultExpandedKeys.value = allNodeIds;
-  defaultCheckedKeys.value = [];
+  const allNodeIds = getAllNodeIds(data.value);  // 获取所有节点 ID
+  defaultExpandedKeys.value = allNodeIds;  // 默认展开所有节点
+  defaultCheckedKeys.value = [];  // 初始化选中的节点为空
 });
 </script>
 
 <style scoped>
 :deep(.el-tree-node__content) {
-  width: 50px;
+  width: 50px; /* 设置树节点内容区域的宽度 */
 }
 </style>
