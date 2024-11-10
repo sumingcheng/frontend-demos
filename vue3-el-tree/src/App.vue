@@ -141,5 +141,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
+:deep(.el-tree-node__content) {
+  width: 50px;
+}
 </style>

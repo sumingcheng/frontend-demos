@@ -1,13 +1,13 @@
 .tree-container {
-    width: 80%;
+    width: 100%; /* 如果需要，可以调整为具体像素值，比如 800px */
+    height: 100%;
     margin: 20px auto;
     font-family: Arial, sans-serif;
 }
 
-/* 增加节点的外边距和内边距以减少拥挤 */
 .custom-tree .el-tree-node {
-    margin-left: 20px; /* 调整缩进距离，可根据实际效果微调 */
-    padding-bottom: 10px; /* 增加节点之间的垂直间隔 */
+    margin-left: 10px; /* 调整缩进距离，根据具体情况微调 */
+    padding-bottom: 5px; /* 减少节点之间的垂直间隔 */
 }
 
 .tree-node {
@@ -15,8 +15,8 @@
     justify-content: space-between;
     align-items: center;
     border: 1px solid #dcdfe6;
-    margin-bottom: 20px; /* 增加节点之间的间隔更多一些 */
-    padding: 12px;
+    margin-bottom: 10px; /* 减少节点之间的间隔 */
+    padding: 10px; /* 调整填充以避免内容挤压 */
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -29,27 +29,33 @@
 
 .node-label {
     flex-grow: 1;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 14px; /* 微调字体大小 */
+    font-weight: normal; /* 根据需要调整字体粗细 */
 }
 
 .action-buttons {
     display: flex;
-    gap: 15px;
+    gap: 10px; /* 减小按钮之间的间隔 */
 }
 
 .el-button {
-    font-size: 12px;
-    padding: 6px 12px;
-    border-radius: 4px;
-    background-color: #409EFF;
-    color: white;
+    font-size: 12px; /* 调整按钮的字体大小 */
+    padding: 4px 10px; /* 调整按钮的填充以减少占用空间 */
+    border-radius: 4px; /* 确保按钮圆角的一致性 */
+    background-color: #409EFF; /* 按钮的背景色 */
+    color: white; /* 按钮的文字颜色 */
 }
 
 .el-button:hover {
-    background-color: #66b1ff;
+    background-color: #66b1ff; /* 鼠标悬浮时按钮的背景色变化 */
 }
 
 .el-button:focus {
-    box-shadow: none;
+    box-shadow: none; /* 移除聚焦时的阴影效果 */
 }
+
+/*间距*/
+.custom-tree .el-tree-node {
+    margin: 20px; /* 增加节点之间的垂直间隔 */
+}
+
