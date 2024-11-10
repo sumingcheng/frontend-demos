@@ -12,7 +12,18 @@
     >
       <template #default="{ node, data }">
         <div class="tree-node">
-          <span class="node-label">{{ node.label }}</span>
+          <span v-if="!data.isEditing" class="node-label" @click="editNode(data)">
+            {{ node.label }}
+          </span>
+          <el-input
+              v-if="data.isEditing"
+              v-model="data.label"
+              size="small"
+              :placeholder="data.originalLabel"
+              @blur="stopEditing(data)"
+              @keydown.enter="stopEditing(data)"
+              style="width: 120px;"
+          />
           <div class="action-buttons">
             <el-button size="small" @click.stop="handleAddChild(data)">添加子节点</el-button>
             <el-button size="small" @click.stop="handleAddSibling(data)">添加同级节点</el-button>
@@ -26,7 +37,7 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
-import { ElTree, ElMessageBox } from 'element-plus';  // 引入 Element UI 的 Tree 组件和消息框组件
+import { ElTree, ElMessageBox, ElInput } from 'element-plus';  // 引入 Element UI 的 Tree 组件和消息框组件
 import { nanoid } from 'nanoid';  // 引入 nanoid 用于生成唯一 ID
 import jsonData from './data.json';  // 引入树形数据
 
@@ -35,6 +46,8 @@ interface TreeNode {
   id: string;
   label: string;
   children?: TreeNode[];
+  isEditing?: boolean;  // 控制是否处于编辑状态
+  originalLabel?: string;  // 保留原始标签内容
 }
 
 // 树形数据
@@ -134,6 +147,21 @@ const handleDeleteNode = async (nodeData: TreeNode) => {
   }
 };
 
+// 启动编辑模式
+const editNode = (nodeData: TreeNode) => {
+  nodeData.originalLabel = nodeData.label;  // 保留原始标签内容
+  nodeData.isEditing = true;
+};
+
+// 结束编辑模式
+const stopEditing = (nodeData: TreeNode) => {
+  nodeData.isEditing = false;
+  // 如果编辑框中的值与原始标签不同，更新标签内容
+  if (nodeData.label !== nodeData.originalLabel) {
+    // 在这里可以进行额外的操作，比如保存更改等
+  }
+};
+
 // 设置默认展开的节点
 onMounted(() => {
   const allNodeIds = getAllNodeIds(data.value);  // 获取所有节点 ID
@@ -145,5 +173,17 @@ onMounted(() => {
 <style scoped>
 :deep(.el-tree-node__content) {
   width: 50px; /* 设置树节点内容区域的宽度 */
+}
+
+.node-label {
+  cursor: pointer;
+}
+
+.action-buttons {
+  margin-top: 5px;
+}
+
+.el-input {
+  width: 120px; /* 可调整输入框宽度 */
 }
 </style>
