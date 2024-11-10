@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tree-container">
     <!-- ElTree 组件 -->
     <el-tree
         :data="data"
@@ -8,12 +8,17 @@
         :default-checked-keys="defaultCheckedKeys"
         node-key="id"
         ref="tree"
+        class="custom-tree"
     >
       <template #default="{ node, data }">
-        <span>{{ node.label }}</span>
-        <el-button size="default" @click.stop="handleAddChild(data)">添加子节点</el-button>
-        <el-button size="default" @click.stop="handleAddSibling(data)">添加同级节点</el-button>
-        <el-button size="default" @click.stop="handleDeleteNode(data)">删除节点</el-button>
+        <div class="tree-node">
+          <span class="node-label">{{ node.label }}</span>
+          <div class="action-buttons">
+            <el-button size="small" @click.stop="handleAddChild(data)">添加子节点</el-button>
+            <el-button size="small" @click.stop="handleAddSibling(data)">添加同级节点</el-button>
+            <el-button size="small" @click.stop="handleDeleteNode(data)">删除节点</el-button>
+          </div>
+        </div>
       </template>
     </el-tree>
   </div>
@@ -134,3 +139,7 @@ onMounted(() => {
   defaultCheckedKeys.value = [];
 });
 </script>
+
+<style scoped>
+
+</style>

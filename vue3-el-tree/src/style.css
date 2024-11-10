@@ -1,79 +1,55 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.tree-container {
+    width: 80%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* 增加节点的外边距和内边距以减少拥挤 */
+.custom-tree .el-tree-node {
+    margin-left: 20px; /* 调整缩进距离，可根据实际效果微调 */
+    padding-bottom: 10px; /* 增加节点之间的垂直间隔 */
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.tree-node {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #dcdfe6;
+    margin-bottom: 20px; /* 增加节点之间的间隔更多一些 */
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.tree-node:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.node-label {
+    flex-grow: 1;
+    font-size: 15px;
+    font-weight: 600;
 }
 
-.card {
-  padding: 2em;
+.action-buttons {
+    display: flex;
+    gap: 15px;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.el-button {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: #409EFF;
+    color: white;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.el-button:hover {
+    background-color: #66b1ff;
+}
+
+.el-button:focus {
+    box-shadow: none;
 }
