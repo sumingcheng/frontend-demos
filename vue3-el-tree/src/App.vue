@@ -56,13 +56,6 @@ const getAllNodeIds = (nodes: TreeNode[]): number[] => {
   }, [] as number[]);
 };
 
-// 设置默认展开的节点
-onMounted(() => {
-  const allNodeIds = getAllNodeIds(data.value);
-  defaultExpandedKeys.value = allNodeIds;
-  defaultCheckedKeys.value = [];
-});
-
 // 添加子节点
 const handleAddChild = (nodeData: TreeNode) => {
   const newNode: TreeNode = { id: Date.now(), label: '新子节点' };
@@ -98,4 +91,11 @@ const findParentNode = (nodes: TreeNode[], nodeId: number): TreeNode | null => {
 const handleDeleteNode = (nodeData: TreeNode) => {
   tree.value?.remove(nodeData);
 };
+
+// 设置默认展开的节点
+onMounted(() => {
+  const allNodeIds = getAllNodeIds(data.value);
+  defaultExpandedKeys.value = allNodeIds;
+  defaultCheckedKeys.value = [];
+});
 </script>
