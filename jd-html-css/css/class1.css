@@ -1,0 +1,156 @@
+.site-nav-cover{
+	width: 100%;
+	background-color: #e3e4e5;
+	border-bottom: 1px solid #ddd;
+}
+
+.site-nav{
+	height: 31px;
+	background-color: green;
+}
+
+.header{
+	position: relative;
+    height: 141px;
+    background-color: pink;
+}
+
+.header .logo-bd{
+	position: absolute;
+	left: 0;
+	top: -31px;
+	width: 190px;
+	height: 172px;
+	background-color: #fff;
+	border-bottom: 1px solid #ededed;
+}
+
+.main-show{
+	margin-bottom: 30px;
+}
+
+.main-show .nav-menu{
+	float: left;
+	width: 190px;
+	height: 480px;
+	margin-right: 10px;
+	background-color: purple;
+}
+
+.main-show .slider{
+	float: left;
+	width: 590px;
+	height: 480px;
+	margin-right: 10px;
+	padding-top: 10px;
+}
+
+.main-show .slider .slider-wrap{
+	width: 100%;
+	height: 100%;
+	background-color: blue;
+}
+
+.main-show .sales{
+	float: left;
+	width: 190px;
+	height: 480px;
+	margin-right: 10px;
+}
+
+.main-show .sales .sales-wrap{
+	height: 100%;
+	overflow: hidden;
+}
+
+.main-show .sales .sales-wrap .sales-item{
+	height: 150px;
+	margin-top: 10px;
+	background-color: #000;
+}
+
+.main-show .funcs{
+	float: left;
+    width: 190px;
+    height: 480px;
+}
+
+.main-show .funcs .user{
+	height: 150px;
+	margin-top: 10px;
+	background-color: pink;
+}
+
+.main-show .funcs .notice{
+	height: 130px;
+	background-color: purple;
+}
+
+.main-show .funcs .service{
+	height: 190px;
+	background-color: orange;
+}
+
+.cd-goods-show{
+	height: 275px;
+	margin-bottom: 30px;
+	background-color: #fff;
+}
+
+.show-area{
+	height: 480px;
+}
+
+.show-area .box{
+	float: left;
+	position: relative;
+	width: 390px;
+	height: 450px;
+	margin: 0 10px 30px 0;
+	background-color: #fff;
+}
+
+.show-area .box.last,
+.show-area .box.strange-last{
+	margin-right: 0;
+}
+
+.show-area .box.strange-last::before{
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 340px;
+	height: 420px;
+	border: 5px solid #333;
+}
+
+.show-area .box.strange-last{
+	background-color: transparent;
+}
+
+.show-area .box.strange-last a{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 340px;
+	height: 420px;
+	background-color: purple;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

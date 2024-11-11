@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>主页</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <!-- 文件引入 -->
+  <!-- <link rel="stylesheet" href="./css/element-v2.5.3.css"> -->
+  <!-- CDN引入 -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.3/theme-chalk/index.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="index" v-cloak>
+    <h1 class="el-icon-s-home title">{{title}}</h1>
+    <div class="tableMain">
+      <el-table :data="tableData" style="width: 70%" class="tableWH">
+        <el-table-column prop="userId" label="用户ID" align="center" width="100">
+        </el-table-column>
+        <el-table-column prop="id" label="发帖人"  align="center" width="100">
+        </el-table-column>
+        <el-table-column prop="title" label="标题" align="center">
+        </el-table-column>
+        <el-table-column prop="body" label="帖子内容" align="center">
+        </el-table-column>
+      </el-table>
+    </div>
+  </div>
+
+  <!-- CDN引入 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.2/vue.min.js" type="text/javascript"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.3/index.min.js" type="text/javascript"></script>
+  <!-- 文件引入 -->
+  <!-- <script src="./js/vue-v2.5.2.js" type="text/javascript"></script> -->
+  <!-- <script src="./js/element-ui-2.15.3.js" type="text/javascript"></script> -->
+  <!-- <script src="./js/moment.js" type="text/javascript"></script> -->
+  <!-- JS 方法 -->
+  <script src="./js/request.js" type="text/javascript"></script>
+  <script src="./js/main.js" type="text/javascript"></script>
+  <!-- 创建Vue实例 -->
+  <script src="./js/index.js" type="text/javascript"></script>
+</body>
+
+</html>

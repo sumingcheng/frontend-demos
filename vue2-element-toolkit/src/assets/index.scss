@@ -1,0 +1,49 @@
+body {
+  background-color: #f4f3f8;
+}
+
+.applicationTitle {
+  display: flex;
+  align-items: center;
+  padding: 15px 0 10px 5px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.applicationTitle:before {
+  display: inline-block;
+  content: '';
+  width: 3px;
+  height: 18px;
+  margin: 0 10px;
+  background-color: #4290fe;
+}
+
+// 通过状态
+.passStatus {
+  .van-field__control {
+    color: #07c160;
+  }
+}
+
+// 未通过
+.defaultState {
+  .van-field__control {
+    color: red;
+  }
+}
+
+.btn {
+  width: 200px;
+  height: 30px !important;
+  color: #fff;
+  border-radius: 50%;
+}
+
+
+.flct {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}

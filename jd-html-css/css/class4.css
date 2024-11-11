@@ -1,0 +1,31 @@
+.nav-menu{
+	float: left;
+	width: 190px;
+	height: 480px;
+	margin-right: 10px;
+	background-color: #fff;
+}
+
+.nav-menu .menu-list{
+	padding: 15px 0;
+}
+
+.nav-menu .menu-list .menu-item{
+    height: 28px;
+    padding-left: 14px;
+    font-size: 12px;
+    line-height: 28px;
+}
+
+.nav-menu .menu-list .menu-item:hover{
+	background-color: #d9d9d9;
+}
+
+.nav-menu .menu-list .menu-item .menu-link{
+	font-size: 14px;
+	color: #626262;
+}
+
+.nav-menu .menu-list .menu-item .menu-link:hover{
+	color: #f10215;
+}

@@ -1,0 +1,14 @@
+    /* 禁止插值表达式加载闪烁 */
+    [v-cloak] {
+      display: none;
+    }
+    /* 页面样式 */
+    .title{
+      font-size: 24px;
+      margin: 20px;
+    }
+    .tableMain{
+      display: flex;
+
+      
+    }

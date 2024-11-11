@@ -1,0 +1,103 @@
+.funcs{
+	float: left;
+	width: 190px;
+	height: 480px;
+	margin-left: 10px;
+}
+
+.funcs-user{
+	position: relative;
+	height: 150px;
+	margin-top: 10px;
+	background-color: #fff;
+}
+
+.funcs-user .avatar-wrap{
+	position: absolute;
+	left: 50%;
+	top: -10px;
+    width: 65px;
+    height: 65px;
+    margin-left: -32px;
+    border: 5px solid #e3e1df;
+    box-shadow: 3px 6px 25px #c3c3c3;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.funcs-user .avatar-wrap img{
+	width: 100%;
+}
+
+.funcs-user .user-wrap{
+	padding-top: 62px;
+}
+
+.funcs-user .user-wrap .user-text{
+	height: 40px;
+	padding: 0 10px;
+	text-align: center;
+	font-size: 12px;
+}
+
+.funcs-user .user-wrap .user-text p{
+	line-height: 20px;
+}
+
+.funcs-user .user-wrap .user-text .welcome{
+	color: #888;
+}
+
+.funcs-user .user-wrap .user-text .user-lk a{
+	color: #666;
+}
+
+.funcs-user .user-wrap .user-btn{
+	height: 25px;
+	margin-top: 10px;
+	padding-left: 15px;
+}
+
+.funcs-user .user-wrap .user-btn .btn{
+	float: left;
+	display: block;
+	width: 70px;
+	height: 25px;
+	margin: 0 5px;
+	border-radius: 12px;
+	box-shadow: 6px 8px 20px rgba(45, 45, 45, .15);
+	font-size: 12px;
+	text-align: center;
+	line-height: 25px;
+}
+
+.funcs-user .user-wrap .user-btn .btn.btn-fl{
+	color: #f10215;
+}
+
+.funcs-user .user-wrap .user-btn .btn.btn-fl:hover,
+.funcs-user .user-wrap .user-btn .btn.btn-plus:hover{
+	background-color: #f10215;
+	color: #fff;
+}
+
+.funcs-user .user-wrap .user-btn .btn.btn-plus{
+	background-color: #363634;
+	color: #e5d790;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

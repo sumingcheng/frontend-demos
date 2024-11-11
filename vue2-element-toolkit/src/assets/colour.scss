@@ -1,0 +1,41 @@
+$kleinBlue: #002fa7;
+$pineYellow: #FFE76F;
+
+$marsGreen: #01847F;
+$rosePowder: #F9D2E4;
+
+$hermesOrange: #E85827;
+$darkBlue: #000026;
+
+$tiffanyBlue: #80D1C8;
+$cheese: #F8F5D6;
+
+$chineseRed: #ff0000;
+$canaryYellow: #FAEAD3;
+
+$vandykeBrown: #492D22;
+$lightKhaki: #D8C7B5;
+
+$berlinBlue: #003153;
+$foggyGrey: #E5DDD7;
+
+.d1 {
+  color: $cheese;
+  background-color: $tiffanyBlue;
+}
+
+.d2 {
+  color: $tiffanyBlue;
+  background-color: $cheese;
+}
+
+.d3 {
+  color: $canaryYellow;
+  background-color: $chineseRed;
+}
+
+.d4 {
+  color: $chineseRed;
+  background-color: $canaryYellow;
+}
+

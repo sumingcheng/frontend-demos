@@ -1,0 +1,60 @@
+body{
+	margin: 0;
+	background-color: #f0f3ef;
+	font-family: "Microsoft YaHei",tahoma,arial,"Hiragino Sans GB",\\5b8b\4f53,sans-serif;
+	color: #666;
+	-webkit-font-smoothing: antialiased;
+}
+
+ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+div,
+ul,
+li{
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+	margin: 0;
+	font-weight: normal;
+}
+
+input,
+button{
+	border: none;
+	outline: none;
+}
+
+i,
+em{
+	font-style: normal;
+}
+
+img{
+	width: 100%;
+}
+
+.clearfix{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.layer{
+	width: 1190px;
+	margin: 0 auto;
+}

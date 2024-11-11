@@ -1,0 +1,72 @@
+.funcs-notice{
+	width: 190px;
+	height: 130px;
+	background-color: #fff;
+}
+
+.funcs-notice .notice-tab{
+	height: 122px;
+}
+
+.funcs-notice .notice-tab .notice-hd{
+	position: relative;
+	height: 26px;
+	padding-top: 8px;
+	font-size: 0;
+	line-height: 12px;
+}
+
+.funcs-notice .notice-tab .notice-hd .tab-item{
+	padding: 0 15px;
+	font-size: 12px;
+	color: #333;
+}
+
+.funcs-notice .notice-tab .notice-hd .tab-item.first-child{
+	border-right: 1px solid #dfe0e1;
+}
+
+.funcs-notice .notice-tab .notice-hd .tab-item.more{
+	position: absolute;
+	right: 12px;
+	padding: 0;
+}
+
+.funcs-notice .notice-tab .notice-hd .tab-item.more:hover{
+	color: #f10215;
+}
+
+.funcs-notice .notice-tab .notice-hd .tab-line{
+	position: absolute;
+	bottom: -1px;
+	width: 27px;
+	height: 2px;
+	margin-left: 13px;
+	background-color: #f10215;
+}
+
+.funcs-notice .notice-tab .notice-wrap{
+	width: 160px;
+	height: 96px;
+	margin-left: 15px;
+	padding-top: 8px;
+}
+
+.funcs-notice .notice-tab .notice-wrap .notice-list .notice-item{
+	height: 22px;
+	line-height: 22px;
+}
+
+.funcs-notice .notice-tab .notice-wrap .notice-list .notice-item .notice-lk{
+	color: #666;
+	font-size: 12px;
+}
+
+.funcs-notice .notice-tab .notice-wrap .notice-list .notice-item .notice-lk:hover{
+	color: #f10215;
+}
+
+
+
+
+

@@ -1,0 +1,23 @@
+.img-show{
+	float: left;
+	width: 190px;
+	height: 480px;
+}
+
+.img-show .img-show-inner{
+	height: 470px;
+	margin-top: 10px;
+}
+
+.img-show .img-show-inner .img-item{
+	height: 150px;
+	margin-bottom: 10px;
+}
+
+.img-show .img-show-inner .img-item:hover{
+	opacity: .8;
+}
+
+.img-show .img-show-inner .img-item img{
+	width: 100%;
+}

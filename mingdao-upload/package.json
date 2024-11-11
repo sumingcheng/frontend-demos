@@ -1,0 +1,19 @@
+{
+  "name": "mingdao",
+  "version": "1.0.0",
+  "description": "mingdao",
+  "main": "Server/index.js",
+  "scripts": {
+    "dev": "nodemon Server/index.js",
+    "delete": "node Server/bulkDeletion.js",
+    "upload": "node Server/bulkUploads.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.3",
+    "colors-console": "^1.0.3",
+    "lodash": "^4.17.21"
+  }
+}

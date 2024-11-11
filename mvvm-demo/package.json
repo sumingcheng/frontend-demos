@@ -1,0 +1,23 @@
+{
+  "name": "MVVM",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumingcheng/MVVM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumingcheng/MVVM/issues"
+  },
+  "homepage": "https://github.com/sumingcheng/MVVM#readme",
+  "dependencies": {
+    "jsdoc": "^4.0.0"
+  }
+}
